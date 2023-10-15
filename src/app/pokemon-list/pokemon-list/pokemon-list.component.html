@@ -1,0 +1,18 @@
+<div class="flex flex-wrap gap-2" >
+    <div *ngFor="let pokemon of pokemons"
+        class="flex-col rounded-lg bg-white shadow-slate-300 dark:bg-neutral-700 w-fit"
+        >
+        <div class="inline-flex">
+            <img class="rounded-t-lg"
+                [src]="pokemon.sprites.front_default" alt="" />
+            <div class="p-6">
+                <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 capitalize">
+                    {{ pokemon.name }}
+                </h5>
+            </div>
+        </div>
+        <div class="inline-flex" >
+            <app-type-tag *ngFor="let type of pokemon.types" [type]="type.type.name" />
+        </div>
+    </div>
+</div>

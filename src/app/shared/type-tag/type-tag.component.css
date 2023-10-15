@@ -1,0 +1,59 @@
+/* Normal */
+.bg-normal { background-color: #A8A878; }
+
+/* Fighting */
+.bg-fighting { background-color: #C03028; }
+
+/* Flying */
+.bg-flying { background-color: #A890F0; }
+
+/* Poison */
+.bg-poison { background-color: #A040A0; }
+
+/* Ground */
+.bg-ground { background-color: #E0C068; }
+
+/* Rock */
+.bg-rock { background-color: #B8A038; }
+
+/* Bug */
+.bg-bug { background-color: #A8B820; }
+
+/* Ghost */
+.bg-ghost { background-color: #705898; }
+
+/* Steel */
+.bg-steel { background-color: #B8B8D0; }
+
+/* Fire */
+.bg-fire { background-color: #F08030; }
+
+/* Water */
+.bg-water { background-color: #6890F0; }
+
+/* Grass */
+.bg-grass { background-color: #78C850; }
+
+/* Electric */
+.bg-electric { background-color: #F8D030; }
+
+/* Psychic */
+.bg-psychic { background-color: #F85888; }
+
+/* Ice */
+.bg-ice { background-color: #98D8D8; }
+
+/* Dragon */
+.bg-dragon { background-color: #7038F8; }
+
+/* Dark */
+.bg-dark { background-color: #705848; }
+
+/* Fairy */
+.bg-fairy { background-color: #EE99AC; }
+
+/* Unknown */
+.bg-unknown { background-color: #68A090; }
+
+/* Shadow */
+.bg-shadow { background-color: #705898; }
