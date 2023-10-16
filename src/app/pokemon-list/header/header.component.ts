@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  toggled: boolean = false
 
+  toggleMenu() {
+    this.toggled = !this.toggled
+  }
 }
