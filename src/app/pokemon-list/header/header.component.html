@@ -13,7 +13,7 @@
             (click)="toggleMenu()"
             class="cursor-pointer w-7 md:hidden">
             <div class="space-y-2">
-                <div [ngClass]="toggled ? 'rotate-45 translate-y-2.5' : ''" 
+                <div [ngClass]="toggled ? 'rotate-45 translate-y-2.5' : ''"
                     class="w-8 h-0.5 bg-gray-600 transition-all"></div>
                 <div [ngClass]="toggled ? 'opacity-0' : 'opacity-100'"
                     class="w-8 h-0.5 bg-gray-600 transition-all"></div>
@@ -35,7 +35,7 @@
                 <a href="" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Favoris</a>
             </li>
             <li class="py-4 md:py-0 md:mr-6">
-                <a href="" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Utilisateurs</a>
+                <a (click)="navigateToUsersList()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Utilisateurs</a>
             </li>
         </ul>
     </nav>

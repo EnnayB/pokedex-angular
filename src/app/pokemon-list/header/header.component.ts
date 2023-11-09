@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,13 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   toggled: boolean = false
 
+  constructor(private router: Router) {}
+
   toggleMenu() {
     this.toggled = !this.toggled
+  }
+
+  navigateToUsersList() {
+    this.router.navigate(['/users']);
   }
 }
