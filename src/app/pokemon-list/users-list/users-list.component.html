@@ -1,10 +1,14 @@
-<div>
-  <h2>List of Users</h2>
-  <ul>
-    <li *ngFor="let user of users">
-      <p>User ID: {{ user.id }}</p>
-      <p>Username: {{ user.username }}</p>
-      <p>Favorite Pokémon: {{ user.favoritePokemon.join(', ') }}</p>
-    </li>
-  </ul>
+<div class="flex flex-wrap gap-2 border-r-slate-200 border-r-2 pr-6 overflow-hidden">
+  <div *ngFor="let user of users" class="flex flex-grow flex-col rounded-lg bg-white shadow-slate-300 dark:bg-neutral-700 w-full">
+    <div class="inline-flex">
+      <div class="p-6">
+        <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 capitalize">
+          {{ user.username }}
+        </h5>
+      </div>
+    </div>
+    <div class="inline-flex">
+      <p class="text-md font-medium leading-tight text-neutral-800 dark:text-neutral-50">Favorite Pokémons : {{ user.favoritePokemon.join(', ') }}</p>
+    </div>
+  </div>
 </div>
