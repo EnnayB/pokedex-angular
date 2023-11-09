@@ -1,1 +1,10 @@
-<p>users-list works!</p>
+<div>
+  <h2>List of Users</h2>
+  <ul>
+    <li *ngFor="let user of users">
+      <p>User ID: {{ user.id }}</p>
+      <p>Username: {{ user.username }}</p>
+      <p>Favorite Pokémon: {{ user.favoritePokemon.join(', ') }}</p>
+    </li>
+  </ul>
+</div>
