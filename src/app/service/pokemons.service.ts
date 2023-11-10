@@ -54,11 +54,12 @@ export interface PokemonDetailDTO {
 })
 export class PokemonsService {
   private pageLimit: number = 10
+  private userFavoritePokemons: Record<number, string[]> = {}
 
   constructor(
     private http: HttpClient
   ) { }
-
+  
   // Get Pokemons
   getPokemons = (): Observable<PokemonListDTO> => {
     return this.http.get<PokemonListDTO>(`${BASE_URL}/pokemon?limit=${this.pageLimit}`)
@@ -66,5 +67,25 @@ export class PokemonsService {
 
   getPokemonDetail = (name: string): Observable<PokemonDetailDTO> => {
     return this.http.get<PokemonDetailDTO>(`${BASE_URL}/pokemon/${name}`)
+  }
+
+  getUserFavoritePokemons(userId: number): string[] {
+    return this.userFavoritePokemons[userId] || []
+  }
+
+  addUserFavoritePokemon(userId: number, pokemonName: string): void {
+    if (this.userFavoritePokemons[userId]) {
+      this.userFavoritePokemons[userId].push(pokemonName)
+    }
+  }
+
+  removeUserFavoritePokemon(userId: number, pokemonName: string) : void {
+    if (this.userFavoritePokemons[userId]) {
+      const index = this.userFavoritePokemons[userId]?.indexOf(pokemonName)
+
+      if (index !== -1) {
+        this.userFavoritePokemons[userId].splice(index, 1)
+      }
+    }
   }
 }

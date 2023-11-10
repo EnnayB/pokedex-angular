@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core'
 })
 export class UserService {
   private users: User[] = [
-    { id: 1, login: 'john.doe', password: '1234', isAdmin: true, favoritePokemons: ['pikachu', 'charmander'] },
-    { id: 2, login: 'bob.doe', password: '0000', isAdmin: false, favoritePokemons: ['bulbasaur', 'squirtle'] },
+    { id: 1, login: 'john.doe', password: '1234', isAdmin: true },
+    { id: 2, login: 'bob.doe', password: '0000', isAdmin: false },
   ]
 
   getUsers(): User[] {
@@ -19,6 +19,4 @@ export interface User {
   login: string
   password: string
   isAdmin: boolean
-  // fixme
-  favoritePokemons: string[]
 }
