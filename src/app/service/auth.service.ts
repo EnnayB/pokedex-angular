@@ -5,7 +5,7 @@ import { User, UserService } from './users.service';
   providedIn: 'root',
 })
 export class AuthService {
-  private currentUser: User | undefined;
+  private currentUser?: User;
 
   constructor(private userService: UserService) {}
 
