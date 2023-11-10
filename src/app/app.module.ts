@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { UsersListComponent } from './users-list/users-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {FormsModule} from "@angular/forms";
 
@@ -17,7 +16,6 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    UsersListComponent,
     LoginPageComponent
   ],
   imports: [
