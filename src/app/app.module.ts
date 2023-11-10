@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { UsersListComponent } from './pokemon-list/users-list/users-list.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -15,7 +16,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    UsersListComponent
+    UsersListComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
