@@ -54,12 +54,12 @@ export interface PokemonDetailDTO {
 })
 export class PokemonsService {
   private pageLimit: number = 10
-  private userFavoritePokemons: Record<number, string[]> = {}
+  private userFavoritePokemons: Record<number, number[]> = {}
 
   constructor(
     private http: HttpClient
   ) { }
-  
+
   // Get Pokemons
   getPokemons = (): Observable<PokemonListDTO> => {
     return this.http.get<PokemonListDTO>(`${BASE_URL}/pokemon?limit=${this.pageLimit}`)
@@ -69,19 +69,19 @@ export class PokemonsService {
     return this.http.get<PokemonDetailDTO>(`${BASE_URL}/pokemon/${name}`)
   }
 
-  getUserFavoritePokemons(userId: number): string[] {
+  getUserFavoritePokemons(userId: number): number[] {
     return this.userFavoritePokemons[userId] || []
   }
 
-  addUserFavoritePokemon(userId: number, pokemonName: string): void {
+  addUserFavoritePokemon(userId: number, pokemonId: number): void {
     if (this.userFavoritePokemons[userId]) {
-      this.userFavoritePokemons[userId].push(pokemonName)
+      this.userFavoritePokemons[userId].push(pokemonId)
     }
   }
 
-  removeUserFavoritePokemon(userId: number, pokemonName: string) : void {
+  removeUserFavoritePokemon(userId: number, pokemonId: number) : void {
     if (this.userFavoritePokemons[userId]) {
-      const index = this.userFavoritePokemons[userId]?.indexOf(pokemonName)
+      const index = this.userFavoritePokemons[userId]?.indexOf(pokemonId)
 
       if (index !== -1) {
         this.userFavoritePokemons[userId].splice(index, 1)

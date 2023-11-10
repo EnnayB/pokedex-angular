@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/service/auth.service'
 export class LoginPageComponent {
   login: string = ''
   password: string = ''
+  authenticationFailed: boolean = false
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -17,8 +18,7 @@ export class LoginPageComponent {
     if (this.authService.authenticate(this.login, this.password)) {
       this.router.navigate(['/pokedex'])
     } else {
-      // fixme
-      console.log('Authentication failed')
+      this.authenticationFailed = true
     }
   }
 }
