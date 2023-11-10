@@ -19,6 +19,10 @@ export class AuthService {
     return this.currentUser
   }
 
+  isAuthenticated(): boolean {
+    return this.currentUser != undefined
+  }
+
   logout(): void {
     this.currentUser = undefined
   }
