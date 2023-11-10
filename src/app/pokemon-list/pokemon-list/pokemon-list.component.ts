@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PokemonDetailDTO, PokemonsService } from 'src/app/service/pokemons.service';
+import { Router } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
+import { PokemonDetailDTO, PokemonsService } from 'src/app/service/pokemons.service'
 
 @Component({
   selector: 'app-pokemon-list',
@@ -7,10 +8,11 @@ import { PokemonDetailDTO, PokemonsService } from 'src/app/service/pokemons.serv
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-  pokemons: PokemonDetailDTO[] = [];
+  pokemons: PokemonDetailDTO[] = []
 
   constructor(
-    private pokemonService: PokemonsService
+    private pokemonService: PokemonsService,
+    private router: Router
   ) { }
 
   public ngOnInit(): void {
@@ -22,5 +24,9 @@ export class PokemonListComponent implements OnInit {
             .subscribe(p => this.pokemons.push(p))
         })
       })
+  }
+
+  showPokemonDetail(pokemon: PokemonDetailDTO): void {
+    this.router.navigate(['/pokedex', pokemon.id])
   }
 }
