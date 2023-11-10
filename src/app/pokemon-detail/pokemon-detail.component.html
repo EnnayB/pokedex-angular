@@ -5,9 +5,9 @@
   </div>
   <div class="mt-6">
     <h3 class="text-xl font-semibold mb-2 text-neutral-700">Types:</h3>
-    <ul class="list-disc ml-6">
-      <li *ngFor="let type of pokemon.types">{{ type.type.name }}</li>
-    </ul>
+    <div class="flex ml-6">
+      <app-type-tag *ngFor="let type of pokemon.types" [type]="type.type.name"></app-type-tag>
+    </div>
   </div>
   <div class="mt-6">
     <p class="text-neutral-700">Weight : {{ pokemon.weight }} kg</p>
