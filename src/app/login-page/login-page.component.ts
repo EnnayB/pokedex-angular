@@ -15,10 +15,10 @@ export class LoginPageComponent {
 
   loginUser() {
     if (this.authService.authenticate(this.login, this.password)) {
-      this.router.navigate(['/pokedex']);
+      this.router.navigate(['/pokedex'])
     } else {
       // fixme
-      console.log('Authentication failed');
+      console.log('Authentication failed')
     }
   }
 }
