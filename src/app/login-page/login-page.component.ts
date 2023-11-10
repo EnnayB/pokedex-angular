@@ -8,13 +8,13 @@ import { AuthService } from 'src/app/service/auth.service'
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  username: string = ''
+  login: string = ''
   password: string = ''
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
-    if (this.authService.authenticate(this.username, this.password)) {
+  loginUser() {
+    if (this.authService.authenticate(this.login, this.password)) {
       this.router.navigate(['/pokedex']);
     } else {
       // fixme

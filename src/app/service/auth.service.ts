@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core'
+import {User, UserService} from "./users.service"
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  // fixme
-  private readonly validUsername = 'user'
-  private readonly validPassword = 'password'
+  constructor(private userService: UserService) {}
 
-  authenticate(username: string, password: string): boolean {
-    // fixme
-    return username === this.validUsername && password === this.validPassword
+  authenticate(login: string, password: string): User | undefined {
+    return this.userService.getUsers().find(u => u.login === login && u.password === password)
   }
 }
