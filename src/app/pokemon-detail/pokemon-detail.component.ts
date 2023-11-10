@@ -17,9 +17,9 @@ export class PokemonDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const pokemonName = params['name'];
-      if (pokemonName) {
-        this.pokemonService.getPokemonDetail(pokemonName)
+      const pokemonId = params['id'];
+      if (pokemonId) {
+        this.pokemonService.getPokemonDetail(pokemonId)
           .subscribe(p => this.pokemon = p);
       }
     });

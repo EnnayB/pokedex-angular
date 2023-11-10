@@ -42,6 +42,7 @@ export interface PokemonDetailType {
 }
 
 export interface PokemonDetailDTO {
+  id: number
   name: string
   types: { slot: number, type: PokemonDetailType }[]
   sprites: { front_default: string }

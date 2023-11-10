@@ -26,7 +26,7 @@ export class PokemonListComponent implements OnInit {
       })
   }
 
-  showPokemonDetail(pokemonName: string): void {
-    this.router.navigate(['/pokedex', pokemonName])
+  showPokemonDetail(pokemon: PokemonDetailDTO): void {
+    this.router.navigate(['/pokedex', pokemon.id])
   }
 }

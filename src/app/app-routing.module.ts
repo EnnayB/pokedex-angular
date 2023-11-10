@@ -7,7 +7,7 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'pokedex', loadChildren: () => import('./pokemon-list/pokemon-list-page/pokemon-list-page.module').then(m => m.PokemonListPageModule), canActivate: [AuthGuard] },
-  { path: 'pokedex/:name', component: PokemonDetailComponent },
+  { path: 'pokedex/:id', component: PokemonDetailComponent },
   { path: 'login', component: LoginPageComponent }
 ]
 
