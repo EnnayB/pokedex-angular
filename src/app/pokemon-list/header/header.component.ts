@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 
 @Component({
@@ -16,6 +16,10 @@ export class HeaderComponent {
   }
 
   navigateToUsersList() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/users'])
+  }
+
+  navigateToFavorites() {
+    this.router.navigate(['/favorites'])
   }
 }

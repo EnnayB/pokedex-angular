@@ -8,6 +8,9 @@
         </h5>
       </div>
     </div>
+    <button class="p-2 ml-auto text-yellow-500" (click)="toggleFavorite(pokemon.id)">
+      ★
+    </button>
     <div class="inline-flex">
       <app-type-tag *ngFor="let type of pokemon.types" [type]="type.type.name" />
     </div>

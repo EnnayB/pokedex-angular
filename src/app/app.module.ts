@@ -10,6 +10,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {FormsModule} from "@angular/forms";
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import {SharedModule} from "./shared/shared.module";
+import { FavoritePokemonListComponent } from './favorite-pokemon-list/favorite-pokemon-list.component';
+import {AuthGuard} from "./service/auth.guard";
+import {PokemonListPageModule} from "./pokemon-list/pokemon-list-page/pokemon-list-page.module";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -19,7 +22,8 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     LoginPageComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    FavoritePokemonListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +38,10 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     AppRoutingModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    PokemonListPageModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
