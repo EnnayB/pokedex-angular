@@ -32,14 +32,21 @@ export class PokemonListComponent implements OnInit {
     this.router.navigate(['/pokedex', pokemon.id])
   }
 
-  toggleFavorite(pokemonId: number): void {
+  toggleFavorite(event: Event, pokemonId: number): void {
+    event.stopPropagation() // pour ne pas ouvrir le détail du pokemon
     const userId = this.authService.getCurrentUser()?.id as number
-    const favorites = this.pokemonService.getUserFavoritePokemons(userId).includes(pokemonId)
 
-    if (favorites) {
-      this.pokemonService.removeUserFavoritePokemon(userId, pokemonId);
+    if (this.isFavorite(pokemonId)) {
+      this.pokemonService.removeUserFavoritePokemon(userId, pokemonId)
+      console.log(this.pokemonService.getUserFavoritePokemons(userId))
     } else {
-      this.pokemonService.addUserFavoritePokemon(userId, pokemonId);
+      this.pokemonService.addUserFavoritePokemon(userId, pokemonId)
+      console.log(this.pokemonService.getUserFavoritePokemons(userId))
     }
+  }
+
+  isFavorite(id: number) {
+    const userId = this.authService.getCurrentUser()?.id as number
+    return this.pokemonService.getUserFavoritePokemons(userId).includes(id)
   }
 }
