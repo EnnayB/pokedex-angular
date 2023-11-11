@@ -27,4 +27,8 @@ export class FavoritePokemonListComponent implements OnInit {
       });
     }
   }
+
+  showPokemonDetail(pokemon: PokemonDetailDTO): void {
+    this.pokemonService.showPokemonDetail(pokemon);
+  }
 }

@@ -29,7 +29,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   showPokemonDetail(pokemon: PokemonDetailDTO): void {
-    this.router.navigate(['/pokedex', pokemon.id])
+    this.pokemonService.showPokemonDetail(pokemon);
   }
 
   toggleFavorite(event: Event, pokemonId: number): void {

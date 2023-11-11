@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BASE_URL } from 'src/config';
 import { Observable } from 'rxjs';
+import {Router} from "@angular/router";
 
 export type PokemonTypes =
   | 'normal'
@@ -52,13 +53,15 @@ export interface PokemonDetailDTO {
 
 @Injectable({
   providedIn: 'root'
+
 })
 export class PokemonsService {
   private pageLimit: number = 10
   private userFavoritePokemons: Record<number, Set<number>> = {}
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   // Get Pokemons
@@ -68,6 +71,10 @@ export class PokemonsService {
 
   getPokemonDetail = (name: string): Observable<PokemonDetailDTO> => {
     return this.http.get<PokemonDetailDTO>(`${BASE_URL}/pokemon/${name}`)
+  }
+
+  showPokemonDetail(pokemon: PokemonDetailDTO): void {
+    this.router.navigate(['/pokedex', pokemon.id])
   }
 
   getUserFavoritePokemons(userId: number): number[] {
