@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-page-error',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-page-error.component.css']
 })
 export class UserPageErrorComponent {
+    constructor(private router: Router) {}
 
+    navigateToPokedex(): void {
+        this.router.navigate(['/pokedex']);
+    }
 }
