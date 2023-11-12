@@ -34,5 +34,6 @@
   "IMAGE": "Image",
   "CONFIRM": "Confirm",
   "ADD_NEW": "Add new Pokemon",
-  "CONFIRM_DELETE_POKEMON": "Are you sure you want to delete this Pokemon?"
+  "CONFIRM_DELETE_POKEMON": "Are you sure you want to delete this Pokemon?",
+  "UPLOAD_FILE": "Upload file"
 }

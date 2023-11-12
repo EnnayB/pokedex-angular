@@ -9,7 +9,7 @@
     <div>
       <label for="newPokemonImage">{{ 'IMAGE' | translate }} :</label>
       <div class="flex items-center space-x-2">
-        <input type="file" id="newPokemonImage" (change)="onImageChange($event)" accept="image/*" />
+        <input type="file" id="newPokemonImage" placeholder="{{ 'UPLOAD_FILE' | translate }}" (change)="onImageChange($event)" accept="image/*" />
         <img *ngIf="newPokemonImage" [src]="getImagePreview()" alt="Selected Image" class="w-12 h-12 rounded-md">
       </div>
     </div>
@@ -37,7 +37,7 @@
 <div class="flex flex-wrap gap-2 border-r-slate-200 border-r-2 pr-6 overflow-hidden mb-4">
   <div *ngFor="let pokemon of pokemons" class="flex flex-grow flex-col rounded-lg bg-white shadow-slate-300 dark:bg-neutral-700 w-full mt-4">
     <div class="inline-flex" (click)="showPokemonDetail(pokemon)">
-      <img class="rounded-t-lg" [src]="pokemon.image" alt="" />
+      <img class="rounded-t-lg" *ngIf="pokemon.image" [src]="pokemon.image" alt="" />
       <div class="p-6 card-header">
         <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 capitalize">
           {{ pokemon.name }}
