@@ -8,6 +8,9 @@ import { User, UserService } from '../service/users.service'
 })
 export class UserPageComponent implements OnInit {
   users: User[] = []
+  newUserName: string = ''
+  newUserPassword: string = ''
+  newUserIsAdmin: boolean = false
 
   constructor(private userService: UserService) {}
 
@@ -27,12 +30,19 @@ export class UserPageComponent implements OnInit {
   addUser(): void {
     const newUser: User = {
       id: this.users.length + 1,
-      login: 'NewUser', // fixme
-      password: 'Password',
-      isAdmin: false,
+      login: this.newUserName,
+      password: this.newUserPassword,
+      isAdmin: this.newUserIsAdmin,
     };
 
-    this.userService.addUser(newUser);
-    this.loadUsers();
+    this.userService.addUser(newUser)
+    this.clearNewUserForm()
+    this.loadUsers()
+  }
+
+  clearNewUserForm(): void {
+    this.newUserName = ''
+    this.newUserPassword = ''
+    this.newUserIsAdmin = false
   }
 }
