@@ -5,5 +5,10 @@
     "DISCONNECT": "Se Déconnecter",
 
     "USER_LIST_TITLE": "Liste d'utilisateurs",
-    "DELETE": "Supprimer"
+    "DELETE": "Supprimer",
+
+    "CONNECTION": "Connexion",
+    "LOGIN": "Identifiant",
+    "PASSWORD": "Mot de passe",
+    "CONNECT": "Se connecter"
 }

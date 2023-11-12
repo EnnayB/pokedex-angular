@@ -5,5 +5,10 @@
   "DISCONNECT": "Disconnect",
 
   "USER_LIST_TITLE": "User List",
-  "DELETE": "Delete"
+  "DELETE": "Delete",
+
+  "CONNECTION": "Connection",
+  "LOGIN": "Login",
+  "PASSWORD": "Password",
+    "CONNECT": "Connect"
 }
