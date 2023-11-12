@@ -21,6 +21,10 @@
   "FAVORITES_POKEMONS": "Your favorite pokemons",
   "NO_FAVORITES": "You have no favorite pokemons yet.",
 
+  "ADD_NEW_POKEMON": "Add new pokemon",
+  "NAME": "Name",
+  "IMAGE": "Image",
+  "TYPE": "Type",
   "TYPES": "Types",
   "WEIGHT": "Weight",
   "HEIGHT": "Height",
