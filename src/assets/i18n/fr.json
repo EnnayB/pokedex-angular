@@ -13,6 +13,9 @@
     "CONNECT": "Se connecter",
     "AUTHENTICATION_FAILED": "L'identifiant ou le mot de passe est incorrect.",
 
+    "FAVORITES_POKEMONS": "Vos pokémons favoris",
+    "NO_FAVORITES": "Vous n'avez pas de pokémon favori pour le moment.",
+
     "TYPES": "Types",
     "WEIGHT": "Poids",
     "HEIGHT": "Taille"
