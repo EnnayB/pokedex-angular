@@ -2,7 +2,7 @@
     "LIST": "Liste",
     "FAVORITES": "Favoris",
     "USERS": "Utilisateurs",
-    "DISCONNECT": "Se Déconnecter",
+    "LOG_OUT": "Se Déconnecter",
 
     "USER_LIST_TITLE": "Liste d'utilisateurs",
     "ADD_NEW_USER" : "Ajouter un nouvel utilisateur",
@@ -13,7 +13,7 @@
     "CONNECTION": "Connexion",
     "LOGIN": "Identifiant",
     "PASSWORD": "Mot de passe",
-    "CONNECT": "Se connecter",
+    "SIGN_IN": "Se connecter",
     "AUTHENTICATION_FAILED": "L'identifiant ou le mot de passe est incorrect.",
 
     "FAVORITES_POKEMONS": "Vos pokémons favoris",
@@ -21,5 +21,9 @@
 
     "TYPES": "Types",
     "WEIGHT": "Poids",
-    "HEIGHT": "Taille"
+    "HEIGHT": "Taille",
+
+    "ACCESS_DENIED": "Accès refusé",
+    "NOT_ADMIN_ERROR": "Vous n'avez pas les droits d'administrateur pour accéder à cette page.",
+    "RETURN_TO_POKEDEX": "Revenir au pokédex"
 }
