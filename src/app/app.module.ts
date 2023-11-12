@@ -15,6 +15,8 @@ import {AuthGuard} from "./service/auth.guard";
 import {PokemonListPageModule} from "./pokemon-list/pokemon-list-page/pokemon-list-page.module";
 import { UserPageComponent } from './user-page/user-page.component';
 import { UserPageErrorComponent } from './user-page-error/user-page-error.component';
+import { MyPokemonDetailsComponent } from './my-pokemon-details/my-pokemon-details.component';
+import { MyPokemonEditComponent } from './my-pokemon-edit/my-pokemon-edit.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -27,7 +29,9 @@ export function createTranslateLoader(http: HttpClient) {
     PokemonDetailComponent,
     FavoritePokemonListComponent,
     UserPageComponent,
-    UserPageErrorComponent
+    UserPageErrorComponent,
+    MyPokemonDetailsComponent,
+    MyPokemonEditComponent,
   ],
   imports: [
     BrowserModule,

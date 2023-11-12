@@ -95,4 +95,10 @@ export class PokemonsService {
       favoritesSet.delete(pokemonId)
     }
   }
+
+  pokemonTypes: PokemonTypes[] = [
+    'normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost',
+    'steel', 'fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon',
+    'dark', 'fairy', 'unknown', 'shadow'
+  ];
 }

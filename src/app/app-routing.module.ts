@@ -6,6 +6,8 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import {FavoritePokemonListComponent} from './favorite-pokemon-list/favorite-pokemon-list.component';
 import {UserPageComponent} from "./user-page/user-page.component";
 import {UserPageErrorComponent} from "./user-page-error/user-page-error.component";
+import {MyPokemonDetailsComponent} from "./my-pokemon-details/my-pokemon-details.component";
+import {MyPokemonEditComponent} from "./my-pokemon-edit/my-pokemon-edit.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'favorites', component: FavoritePokemonListComponent, canActivate: [AuthGuard] },
   { path: 'users', component: UserPageComponent, canActivate: [AuthGuard] },
   { path: 'error', component: UserPageErrorComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginPageComponent }
+  { path: 'login', component: LoginPageComponent },
+  { path: 'my-pokedex/:id', component: MyPokemonDetailsComponent },
+  { path: 'edit-pokemon/:id', component: MyPokemonEditComponent }
 ]
 
 @NgModule({
