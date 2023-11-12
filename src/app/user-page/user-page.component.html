@@ -12,15 +12,15 @@
         <form>
             <div class="mb-4">
                 <label for="newUserName" class="block text-sm font-medium text-neutral-800 dark:text-neutral-50">Login :</label>
-                <input type="text" id="newUserName" [(ngModel)]="newUserName" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-300">
+                <input type="text" id="newUserName" name="newUserName" [(ngModel)]="newUserName" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-300">
             </div>
             <div class="mb-4">
                 <label for="newUserPassword" class="block text-sm font-medium text-neutral-800 dark:text-neutral-50">Password :</label>
-                <input type="password" id="newUserPassword" [(ngModel)]="newUserPassword" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-300">
+                <input type="password" id="newUserPassword" name="newUserPassword" [(ngModel)]="newUserPassword" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-300">
             </div>
             <div class="mb-4">
                 <label class="block text-sm font-medium text-neutral-800 dark:text-neutral-50">
-                    <input type="checkbox" [(ngModel)]="newUserIsAdmin" class="mr-2 leading-tight text-neutral-800 dark:text-neutral-50"> Admin
+                    <input type="checkbox" id="newUserIsAdmin" name="newUserIsAdmin" [(ngModel)]="newUserIsAdmin" class="mr-2 leading-tight text-neutral-800 dark:text-neutral-50"> Admin
                 </label>
             </div>
             <button type="button" (click)="addUser()" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">Ajouter</button>

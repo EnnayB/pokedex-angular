@@ -28,6 +28,7 @@ export class UserPageComponent implements OnInit {
   }
 
   addUser(): void {
+    console.log(this.newUserName, this.newUserPassword, this.newUserIsAdmin)
     const newUser: User = {
       id: this.users.length + 1,
       login: this.newUserName,
@@ -36,6 +37,7 @@ export class UserPageComponent implements OnInit {
     };
 
     this.userService.addUser(newUser)
+    console.log(this.userService.getUsers())
     this.clearNewUserForm()
     this.loadUsers()
   }
