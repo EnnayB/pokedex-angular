@@ -1,10 +1,48 @@
-<!-- display list here -->
+<div class="mt-4">
+  <h3 class="text-xl font-bold mb-2 text-neutral-800 dark:text-neutral-50">Ajouter un nouveau pokemon</h3>
+  <form>
+    <div class="mb-4">
+      <label for="newPokemonName" class="block text-sm font-medium text-neutral-800 dark:text-neutral-50">Nom :</label>
+      <input type="text" id="newPokemonName" name="newPokemonName" [(ngModel)]="newPokemonName"
+             class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-300" required>
+    </div>
+    <div class="mb-4">
+      <label for="newPokemonImage">Image :</label>
+      <input type="file" id="newPokemonImage" (change)="onImageChange($event)" accept="image/*" />
+      <img *ngIf="newPokemonImage" [src]="getImagePreview()" alt="Selected Image" />
+    </div>
+    <div>
+      <label for="newPokemonTypes">Type (appuyer et glisser pour en sélectionner plusieurs) :</label>
+      <select id="newPokemonTypes" name="newPokemonTypes" [(ngModel)]="newPokemonTypes" multiple required>
+        <option *ngFor="let type of pokemonTypes" [ngValue]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="newPokemonWeight">Poids :</label>
+      <input type="number" id="newPokemonWeight" name="newPokemonWeight" [(ngModel)]="newPokemonWeight" />
+    </div>
+    <div>
+      <label for="newPokemonHeight">Taille :</label>
+      <input type="number" id="newPokemonHeight" name="newPokemonHeight" [(ngModel)]="newPokemonHeight" />
+    </div>
+    <button type="button" (click)="addPokemon()" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">Ajouter</button>
+  </form>
+</div>
 
-<form (submit)="addPokemon()">
-  <label for="pokemonName">Name:</label>
-  <input id="pokemonName" [(ngModel)]="newPokemonName" name="newPokemonName" required />
-
-  <!-- Add more input fields for other details if needed -->
-
-  <button type="submit">Add Pokémon</button>
-</form>
+<div class="flex flex-wrap gap-2 border-r-slate-200 border-r-2 pr-6 overflow-hidden">
+  <div *ngFor="let pokemon of pokemons" class="flex flex-grow flex-col rounded-lg bg-white shadow-slate-300 dark:bg-neutral-700 w-full">
+    <div class="inline-flex">
+      <img class="rounded-t-lg" [src]="pokemon.image" alt="" />
+      <div class="p-6 card-header">
+        <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 capitalize">
+          {{ pokemon.name }}
+        </h5>
+      </div>
+    </div>
+    <div class="inline-flex">
+      <app-type-tag *ngFor="let type of pokemon.types" [type]="type" />
+    </div>
+    <button (click)="deletePokemon(pokemon)"
+            class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300">Supprimer</button>
+  </div>
+</div>

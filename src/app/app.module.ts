@@ -27,7 +27,7 @@ export function createTranslateLoader(http: HttpClient) {
     PokemonDetailComponent,
     FavoritePokemonListComponent,
     UserPageComponent,
-    UserPageErrorComponent
+    UserPageErrorComponent,
   ],
   imports: [
     BrowserModule,
