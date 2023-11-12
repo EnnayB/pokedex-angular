@@ -16,6 +16,10 @@ export class HeaderComponent {
     this.toggled = !this.toggled
   }
 
+  navigateToPokedex() {
+    this.router.navigate(['/pokedex'])
+  }
+
   navigateToUsersList() {
     const currentUser = this.authService.getCurrentUser()
 

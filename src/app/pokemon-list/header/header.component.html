@@ -1,6 +1,6 @@
 <header id="top" class="bg-white z-50 fixed top-0 w-full shadow-xl">
     <nav id="main-nav" class="bg-white max-w-5xl mx-auto p-6 flex items-center justify-between">
-        <a href="top" class="flex" aria-label="Page d'accueil">
+        <a (click)="navigateToPokedex()" class="flex" aria-label="Page d'accueil">
             <img src="https://www.pngmart.com/files/23/Pokedex-PNG.png" class="hidden md:w-9 md:inline md:mr-4" alt="" >
             <span class="text-lg lg:text-xl" aria-hidden="true">
                 Pokedex App
@@ -29,7 +29,7 @@
             flex flex-col items-center
             md:static md:z-10 md:w-min md:transform-none md:border-none md:flex-row">
             <li class="py-4 md:py-0 md:mr-6">
-                <a href="" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Listes</a>
+                <a (click)="navigateToPokedex()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Listes</a>
             </li>
             <li class="py-4 md:py-0 md:mr-6">
                 <a (click)="navigateToFavorites()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Favoris</a>
