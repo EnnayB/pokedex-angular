@@ -10,5 +10,9 @@
   "CONNECTION": "Connection",
   "LOGIN": "Login",
   "PASSWORD": "Password",
-    "CONNECT": "Connect"
+  "CONNECT": "Connect",
+
+  "TYPES": "Types",
+  "WEIGHT": "Weight",
+  "HEIGHT": "Height"
 }

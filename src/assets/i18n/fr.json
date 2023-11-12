@@ -10,5 +10,9 @@
     "CONNECTION": "Connexion",
     "LOGIN": "Identifiant",
     "PASSWORD": "Mot de passe",
-    "CONNECT": "Se connecter"
+    "CONNECT": "Se connecter",
+
+    "TYPES": "Types",
+    "WEIGHT": "Poids",
+    "HEIGHT": "Taille"
 }

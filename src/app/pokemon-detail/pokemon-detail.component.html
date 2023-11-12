@@ -4,13 +4,13 @@
     <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="rounded-lg">
   </div>
   <div class="mt-6">
-    <h3 class="text-xl font-semibold mb-2 text-neutral-700">Types:</h3>
+    <h3 class="text-xl font-semibold mb-2 text-neutral-700">{{ 'TYPES' | translate }} :</h3>
     <div class="flex ml-6">
       <app-type-tag *ngFor="let type of pokemon.types" [type]="type.type.name"></app-type-tag>
     </div>
   </div>
   <div class="mt-6">
-    <p class="text-neutral-700">Weight : {{ pokemon.weight }} kg</p>
-    <p class="text-neutral-700">Height : {{ pokemon.height }} cm</p>
+    <p class="text-neutral-700">{{ 'WEIGHT' | translate }} : {{ pokemon.weight }} kg</p>
+    <p class="text-neutral-700">{{ 'HEIGHT' | translate}} : {{ pokemon.height }} cm</p>
   </div>
 </div>
