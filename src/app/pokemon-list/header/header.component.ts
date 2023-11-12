@@ -17,18 +17,16 @@ export class HeaderComponent {
   }
 
   navigateToUsersList() {
-    this.router.navigate(['/users'])
+    const currentUser = this.authService.getCurrentUser()
+
+    if (currentUser && currentUser.isAdmin) {
+        this.router.navigate(['/users'])
+    } else {
+        this.router.navigate(['/error'])
+    }
   }
 
   navigateToFavorites() {
     this.router.navigate(['/favorites'])
-    const currentUser = this.authService.getCurrentUser()
-
-    console.log(currentUser?.isAdmin)
-    if (currentUser && currentUser.isAdmin) {
-      this.router.navigate(['/users'])
-    } else {
-      this.router.navigate(['/error'])
-    }
   }
 }
