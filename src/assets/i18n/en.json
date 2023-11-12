@@ -5,7 +5,10 @@
   "DISCONNECT": "Disconnect",
 
   "USER_LIST_TITLE": "User List",
+  "ADD_NEW_USER" : "Add new user",
+  "ADMIN": "Admin",
   "DELETE": "Delete",
+  "ADD": "Add",
 
   "CONNECTION": "Connection",
   "LOGIN": "Login",
