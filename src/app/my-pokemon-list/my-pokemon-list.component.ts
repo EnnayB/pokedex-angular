@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {PokemonsService, PokemonTypes} from "../service/pokemons.service"
+import {PokemonDetailDTO, PokemonsService, PokemonTypes} from "../service/pokemons.service"
 import {MyPokemon, MyPokemonService} from "../service/my-pokemons.service"
 import {AuthService} from "../service/auth.service";
 import {User} from "../service/users.service";
@@ -63,5 +63,9 @@ export class MyPokemonListComponent implements OnInit {
       this.myPokemonService.deletePokemon(pokemon.id)
       this.pokemons = this.myPokemonService.getMyPokemons()
     }
+  }
+
+  showPokemonDetail(pokemon: MyPokemon): void {
+    this.myPokemonService.showPokemonDetail(pokemon);
   }
 }
