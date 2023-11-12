@@ -3,6 +3,7 @@ import {PokemonDetailDTO, PokemonsService, PokemonTypes} from "../service/pokemo
 import {MyPokemon, MyPokemonService} from "../service/my-pokemons.service"
 import {AuthService} from "../service/auth.service";
 import {User} from "../service/users.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-my-pokemon-list',
@@ -12,7 +13,8 @@ import {User} from "../service/users.service";
 export class MyPokemonListComponent implements OnInit {
   constructor(
     private pokemonService: PokemonsService,
-    private myPokemonService: MyPokemonService) {}
+    private myPokemonService: MyPokemonService,
+    private translateService: TranslateService) {}
   pokemons: MyPokemon[] = []
   pokemonTypes: PokemonTypes[] = this.pokemonService.pokemonTypes
 
@@ -58,10 +60,15 @@ export class MyPokemonListComponent implements OnInit {
   }
 
   deletePokemon(pokemon: MyPokemon): void {
-    if (confirm('Es-tu sûr de vouloir supprimer ce Pokémon ?')) {
-      this.myPokemonService.deletePokemon(pokemon.id)
-      this.pokemons = this.myPokemonService.getMyPokemons()
-    }
+    const confirmationMessageKey = 'CONFIRM_DELETE_POKEMON'
+    const currentLang = this.translateService.currentLang || 'fr'
+
+    this.translateService.get(confirmationMessageKey).subscribe((confirmationMessage) => {
+      if (confirm(confirmationMessage)) {
+        this.myPokemonService.deletePokemon(pokemon.id)
+        this.pokemons = this.myPokemonService.getMyPokemons()
+      }
+    })
   }
 
   showPokemonDetail(pokemon: MyPokemon): void {

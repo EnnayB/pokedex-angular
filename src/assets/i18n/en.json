@@ -27,5 +27,12 @@
 
   "ACCESS_DENIED": "Access denied",
   "NOT_ADMIN_ERROR": "You do not have the administrator rights to access this page.",
-  "RETURN_TO_POKEDEX": "Return to pokedex"
+  "RETURN_TO_POKEDEX": "Return to pokedex",
+
+  "EDIT_POKEMON": "Edit Pokemon",
+  "NAME": "Name",
+  "IMAGE": "Image",
+  "CONFIRM": "Confirm",
+  "ADD_NEW": "Add new Pokemon",
+  "CONFIRM_DELETE_POKEMON": "Are you sure you want to delete this Pokemon?"
 }
