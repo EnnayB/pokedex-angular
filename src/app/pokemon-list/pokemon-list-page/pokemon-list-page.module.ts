@@ -14,6 +14,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     HeaderComponent,
     PokemonListComponent
   ],
+  exports: [
+    HeaderComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,

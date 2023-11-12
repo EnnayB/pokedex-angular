@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BASE_URL } from 'src/config';
 import { Observable } from 'rxjs';
+import {Router} from "@angular/router";
 
 export type PokemonTypes =
   | 'normal'
@@ -52,13 +53,15 @@ export interface PokemonDetailDTO {
 
 @Injectable({
   providedIn: 'root'
+
 })
 export class PokemonsService {
   private pageLimit: number = 10
-  private userFavoritePokemons: Record<number, number[]> = {}
+  private userFavoritePokemons: Record<number, Set<number>> = {}
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   // Get Pokemons
@@ -70,23 +73,26 @@ export class PokemonsService {
     return this.http.get<PokemonDetailDTO>(`${BASE_URL}/pokemon/${name}`)
   }
 
+  showPokemonDetail(pokemon: PokemonDetailDTO): void {
+    this.router.navigate(['/pokedex', pokemon.id])
+  }
+
   getUserFavoritePokemons(userId: number): number[] {
-    return this.userFavoritePokemons[userId] || []
+    const favoritesSet = this.userFavoritePokemons[userId]
+    return favoritesSet ? Array.from(favoritesSet) : []
   }
 
   addUserFavoritePokemon(userId: number, pokemonId: number): void {
-    if (this.userFavoritePokemons[userId]) {
-      this.userFavoritePokemons[userId].push(pokemonId)
+    if (!this.userFavoritePokemons[userId]) {
+      this.userFavoritePokemons[userId] = new Set<number>()
     }
+    this.userFavoritePokemons[userId].add(pokemonId)
   }
 
-  removeUserFavoritePokemon(userId: number, pokemonId: number) : void {
-    if (this.userFavoritePokemons[userId]) {
-      const index = this.userFavoritePokemons[userId]?.indexOf(pokemonId)
-
-      if (index !== -1) {
-        this.userFavoritePokemons[userId].splice(index, 1)
-      }
+  removeUserFavoritePokemon(userId: number, pokemonId: number): void {
+    const favoritesSet = this.userFavoritePokemons[userId]
+    if (favoritesSet) {
+      favoritesSet.delete(pokemonId)
     }
   }
 }

@@ -1,6 +1,7 @@
 import { Router } from '@angular/router'
 import { Component, OnInit } from '@angular/core'
 import { PokemonDetailDTO, PokemonsService } from 'src/app/service/pokemons.service'
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,6 +12,7 @@ export class PokemonListComponent implements OnInit {
   pokemons: PokemonDetailDTO[] = []
 
   constructor(
+    private authService: AuthService,
     private pokemonService: PokemonsService,
     private router: Router
   ) { }
@@ -27,6 +29,24 @@ export class PokemonListComponent implements OnInit {
   }
 
   showPokemonDetail(pokemon: PokemonDetailDTO): void {
-    this.router.navigate(['/pokedex', pokemon.id])
+    this.pokemonService.showPokemonDetail(pokemon);
+  }
+
+  toggleFavorite(event: Event, pokemonId: number): void {
+    event.stopPropagation() // pour ne pas ouvrir le détail du pokemon
+    const userId = this.authService.getCurrentUser()?.id as number
+
+    if (this.isFavorite(pokemonId)) {
+      this.pokemonService.removeUserFavoritePokemon(userId, pokemonId)
+      console.log(this.pokemonService.getUserFavoritePokemons(userId))
+    } else {
+      this.pokemonService.addUserFavoritePokemon(userId, pokemonId)
+      console.log(this.pokemonService.getUserFavoritePokemons(userId))
+    }
+  }
+
+  isFavorite(id: number) {
+    const userId = this.authService.getCurrentUser()?.id as number
+    return this.pokemonService.getUserFavoritePokemons(userId).includes(id)
   }
 }
