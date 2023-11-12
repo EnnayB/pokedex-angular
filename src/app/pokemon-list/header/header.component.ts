@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import {AuthService} from "../../service/auth.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import {AuthService} from "../../service/auth.service";
 export class HeaderComponent {
   toggled: boolean = false
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private translate: TranslateService) {}
 
   toggleMenu() {
     this.toggled = !this.toggled
@@ -36,5 +37,9 @@ export class HeaderComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  switchLanguage(language: string): void {
+    this.translate.use(language);
   }
 }

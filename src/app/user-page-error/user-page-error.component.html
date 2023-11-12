@@ -1,8 +1,8 @@
 <app-header/>
 <div class="flex flex-col items-center justify-center h-screen">
-    <p class="text-3xl font-semibold text-red-500 mb-4">Accès refusé</p>
-    <p class="text-lg text-gray-700">Vous n'avez pas les droits d'administrateur pour accéder à cette page.</p>
+    <p class="text-3xl font-semibold text-red-500 mb-4">{{ 'ACCESS_DENIED' | translate }}</p>
+    <p class="text-lg text-gray-700">{{ 'NOT_ADMIN_ERROR' | translate }}</p>
     <button (click)="navigateToPokedex()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
-        Revenir au Pokédex
+        {{ 'RETURN_TO_POKEDEX' | translate }}
     </button>
 </div>

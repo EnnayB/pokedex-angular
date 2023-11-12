@@ -1,0 +1,31 @@
+{
+  "LIST": "List",
+  "FAVORITES": "Favorites",
+  "USERS": "Users",
+  "LOG_OUT": "Log out",
+
+  "USER_LIST_TITLE": "User List",
+  "ADD_NEW_USER" : "Add new user",
+  "ADMIN": "Admin",
+  "DELETE": "Delete",
+  "ADD": "Add",
+  "CONFIRM_DELETE_OWN_ACCOUNT": "If you delete your own account, you will be logged out!",
+  "CONFIRM_DELETE_USER": "Are you sure you want to delete this user?",
+
+  "CONNECTION": "Sign in",
+  "LOGIN": "Login",
+  "PASSWORD": "Password",
+  "SIGN_IN": "Sign in",
+  "AUTHENTICATION_FAILED": "The username or password is incorrect.",
+
+  "FAVORITES_POKEMONS": "Your favorite pokemons",
+  "NO_FAVORITES": "You have no favorite pokemons yet.",
+
+  "TYPES": "Types",
+  "WEIGHT": "Weight",
+  "HEIGHT": "Height",
+
+  "ACCESS_DENIED": "Access denied",
+  "NOT_ADMIN_ERROR": "You do not have the administrator rights to access this page.",
+  "RETURN_TO_POKEDEX": "Return to pokedex"
+}

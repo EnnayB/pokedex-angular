@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User, UserService } from '../service/users.service';
-import {AuthService} from "../service/auth.service";
+import { AuthService } from "../service/auth.service";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-page',
@@ -14,7 +15,11 @@ export class UserPageComponent implements OnInit {
   newUserPassword: string = ''
   newUserIsAdmin: boolean = false
 
-  constructor(private authService: AuthService, private userService: UserService) {}
+  constructor(
+      private authService: AuthService,
+      private userService: UserService,
+      private translateService: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.loadUsers()
@@ -24,18 +29,29 @@ export class UserPageComponent implements OnInit {
     this.users = this.userService.getUsers()
   }
 
-  deleteUser(user: User): void { // fixme : how to translate the confirm message ?
+  deleteUser(user: User): void {
     this.currentUser = this.authService.getCurrentUser()
+    const currentLang = this.translateService.currentLang || 'fr'
+
     if (this.currentUser?.id === user.id) {
-      if (confirm('Si tu supprimes ton propre compte, tu seras déconnecté !')) {
-        this.userService.deleteUser(user.id)
-        this.authService.logout()
-      }
+      console.log(currentLang)
+      const confirmationMessageKey = 'CONFIRM_DELETE_OWN_ACCOUNT'
+
+      this.translateService.get(confirmationMessageKey).subscribe((confirmationMessage) => {
+        if (confirm(confirmationMessage)) {
+          this.userService.deleteUser(user.id)
+          this.authService.logout()
+        }
+      })
     } else {
-      if (confirm('Es-tu sûr de vouloir supprimer cet utilisateur ?')) {
-        this.userService.deleteUser(user.id)
-        this.loadUsers()
-      }
+      const confirmationMessageKey = 'CONFIRM_DELETE_USER'
+
+      this.translateService.get(confirmationMessageKey).subscribe((confirmationMessage) => {
+        if (confirm(confirmationMessage)) {
+          this.userService.deleteUser(user.id)
+          this.loadUsers();
+        }
+      })
     }
   }
 

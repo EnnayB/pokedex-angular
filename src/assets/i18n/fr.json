@@ -1,5 +1,31 @@
 {
-    "pokedex": {
-        "hello": "hello {{value}}"
-    }
+    "LIST": "Liste",
+    "FAVORITES": "Favoris",
+    "USERS": "Utilisateurs",
+    "LOG_OUT": "Se Déconnecter",
+
+    "USER_LIST_TITLE": "Liste d'utilisateurs",
+    "ADD_NEW_USER" : "Ajouter un nouvel utilisateur",
+    "ADMIN": "Administrateur",
+    "DELETE": "Supprimer",
+    "ADD": "Ajouter",
+    "CONFIRM_DELETE_OWN_ACCOUNT": "Si tu supprimes ton propre compte, tu seras déconnecté !",
+    "CONFIRM_DELETE_USER": "Es-tu sûr de vouloir supprimer cet utilisateur ?",
+
+    "CONNECTION": "Connexion",
+    "LOGIN": "Identifiant",
+    "PASSWORD": "Mot de passe",
+    "SIGN_IN": "Se connecter",
+    "AUTHENTICATION_FAILED": "L'identifiant ou le mot de passe est incorrect.",
+
+    "FAVORITES_POKEMONS": "Vos pokémons favoris",
+    "NO_FAVORITES": "Vous n'avez pas de pokémon favori pour le moment.",
+
+    "TYPES": "Types",
+    "WEIGHT": "Poids",
+    "HEIGHT": "Taille",
+
+    "ACCESS_DENIED": "Accès refusé",
+    "NOT_ADMIN_ERROR": "Vous n'avez pas les droits d'administrateur pour accéder à cette page.",
+    "RETURN_TO_POKEDEX": "Revenir au pokédex"
 }
