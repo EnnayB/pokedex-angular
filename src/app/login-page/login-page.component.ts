@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import { AuthService } from 'src/app/service/auth.service'
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-login-page',
@@ -12,7 +13,7 @@ export class LoginPageComponent {
   password: string = ''
   authenticationFailed: boolean = false
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private translate: TranslateService) {}
 
   loginUser() {
     if (this.authService.authenticate(this.login, this.password)) {
@@ -20,5 +21,9 @@ export class LoginPageComponent {
     } else {
       this.authenticationFailed = true
     }
+  }
+
+  switchLanguage(language: string): void {
+    this.translate.use(language);
   }
 }

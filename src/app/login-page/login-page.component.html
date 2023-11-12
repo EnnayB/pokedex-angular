@@ -1,6 +1,16 @@
 <div class="flex items-center justify-center h-screen bg-neutral-700">
   <div class="bg-white shadow-md rounded-md p-8 max-w-md w-full">
-    <h2 class="text-2xl font-bold mb-4">{{ 'CONNECTION' | translate }}</h2>
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-2xl font-bold">{{ 'CONNECTION' | translate }}</h2>
+      <div class="flex space-x-2">
+        <button (click)="switchLanguage('fr')" class="focus:outline-none">
+          <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="French Flag" class="w-6 h-6">
+        </button>
+        <button (click)="switchLanguage('en')" class="focus:outline-none">
+          <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English Flag" class="w-6 h-6">
+        </button>
+      </div>
+    </div>
     <form (ngSubmit)="loginUser()">
       <div class="mb-4">
         <label for="login" class="block text-gray-700 text-sm font-bold mb-2">{{ 'LOGIN' | translate }} :</label>
@@ -15,7 +25,7 @@
       <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">{{ 'CONNECT' | translate }}</button>
 
       <div *ngIf="authenticationFailed" class="error-message text-red-500 mt-2">
-        The username or password is incorrect.
+        {{ 'AUTHENTICATION_FAILED' | translate }}
       </div>
     </form>
   </div>

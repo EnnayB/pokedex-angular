@@ -11,6 +11,7 @@
     "LOGIN": "Identifiant",
     "PASSWORD": "Mot de passe",
     "CONNECT": "Se connecter",
+    "AUTHENTICATION_FAILED": "L'identifiant ou le mot de passe est incorrect.",
 
     "TYPES": "Types",
     "WEIGHT": "Poids",
