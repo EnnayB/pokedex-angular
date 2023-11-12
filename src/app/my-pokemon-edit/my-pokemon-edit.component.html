@@ -1,30 +1,36 @@
-<div class="mt-4">
-  <h3 class="text-xl font-bold mb-2 text-neutral-800 dark:text-neutral-50">{{ 'EDIT_POKEMON' | translate }}</h3>
-  <form>
-    <div class="mb-4">
-      <label for="newPokemonName" class="block text-sm font-medium text-neutral-800 dark:text-neutral-50">{{ 'NAME' | translate }} :</label>
+<div class="mt-8">
+  <h3 class="text-2xl font-bold mb-4 text-neutral-800 dark:text-neutral-50">{{ 'EDIT_POKEMON' | translate }}</h3>
+  <form class="space-y-4">
+    <div class="flex flex-col">
+      <label for="newPokemonName" class="text-sm font-medium text-neutral-800 dark:text-neutral-50">{{ 'NAME' | translate }}:</label>
       <input type="text" id="newPokemonName" name="newPokemonName" [(ngModel)]="newPokemonName"
-             class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-300" required>
+             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-300" required>
     </div>
-    <div class="mb-4">
-      <label for="newPokemonImage">{{ 'IMAGE' | translate }} :</label>
+    <div class="flex flex-col">
+      <label for="newPokemonImage" class="text-sm font-medium text-neutral-800 dark:text-neutral-50">{{ 'IMAGE' | translate }}:</label>
       <input type="file" id="newPokemonImage" (change)="onImageChange($event)" accept="image/*" />
-      <img *ngIf="newPokemonImage" [src]="getImagePreview()" alt="Selected Image" />
+      <img *ngIf="newPokemonImage" [src]="getImagePreview()" alt="Selected Image" class="mt-2 rounded-lg">
     </div>
-    <div>
-      <label for="newPokemonTypes">{{ 'TYPES' | translate }} :</label>
-      <select id="newPokemonTypes" name="newPokemonTypes" [(ngModel)]="newPokemonTypes" multiple required>
+    <div class="flex flex-col">
+      <label for="newPokemonTypes" class="text-sm font-medium text-neutral-800 dark:text-neutral-50">{{ 'TYPES' | translate }}:</label>
+      <select id="newPokemonTypes" name="newPokemonTypes" [(ngModel)]="newPokemonTypes" multiple required
+              class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-300">
         <option *ngFor="let type of pokemonTypes" [ngValue]="type">{{ type }}</option>
       </select>
     </div>
-    <div>
-      <label for="newPokemonWeight">{{ 'WEIGHT' | translate }} (kg) :</label>
-      <input type="number" id="newPokemonWeight" name="newPokemonWeight" [(ngModel)]="newPokemonWeight" />
+    <div class="flex flex-col">
+      <label for="newPokemonWeight" class="text-sm font-medium text-neutral-800 dark:text-neutral-50">{{ 'WEIGHT' | translate }} (kg):</label>
+      <input type="number" id="newPokemonWeight" name="newPokemonWeight" [(ngModel)]="newPokemonWeight"
+             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-300">
     </div>
-    <div>
-      <label for="newPokemonHeight">{{ 'HEIGHT' | translate}} (cm) :</label>
-      <input type="number" id="newPokemonHeight" name="newPokemonHeight" [(ngModel)]="newPokemonHeight" />
+    <div class="flex flex-col">
+      <label for="newPokemonHeight" class="text-sm font-medium text-neutral-800 dark:text-neutral-50">{{ 'HEIGHT' | translate }} (cm):</label>
+      <input type="number" id="newPokemonHeight" name="newPokemonHeight" [(ngModel)]="newPokemonHeight"
+             class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-300">
     </div>
-    <button type="button" (click)="updatePokemon()" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">{{ 'CONFIRM' | translate }}</button>
+    <button type="button" (click)="updatePokemon()"
+            class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">
+      {{ 'CONFIRM' | translate }}
+    </button>
   </form>
 </div>
