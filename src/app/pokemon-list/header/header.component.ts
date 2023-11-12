@@ -33,4 +33,9 @@ export class HeaderComponent {
   navigateToFavorites() {
     this.router.navigate(['/favorites'])
   }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }
