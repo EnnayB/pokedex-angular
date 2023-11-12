@@ -1,0 +1,10 @@
+<!-- display list here -->
+
+<form (submit)="addPokemon()">
+  <label for="pokemonName">Name:</label>
+  <input id="pokemonName" [(ngModel)]="newPokemonName" name="newPokemonName" required />
+
+  <!-- Add more input fields for other details if needed -->
+
+  <button type="submit">Add Pokémon</button>
+</form>
