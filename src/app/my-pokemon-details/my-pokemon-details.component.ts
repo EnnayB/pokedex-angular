@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import {ActivatedRoute} from "@angular/router";
 import {MyPokemon, MyPokemonService} from "../service/my-pokemons.service";
 
@@ -20,5 +21,9 @@ export class MyPokemonDetailsComponent implements OnInit {
       const pokemonId = +params['id']
       this.pokemon = this.pokemonService.getPokemonDetail(pokemonId)
     });
+  }
+
+  editPokemon(pokemon: MyPokemon): void {
+    this.pokemonService.editPokemon(pokemon)
   }
 }

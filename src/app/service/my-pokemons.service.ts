@@ -32,6 +32,20 @@ export class MyPokemonService {
   getPokemonDetail(id: number): MyPokemon | undefined {
     return this.myPokemons.find((pokemon) => pokemon.id === id);
   }
+
+  updatePokemon(updatedPokemon: MyPokemon): void {
+    const index = this.myPokemons.findIndex(pokemon => pokemon.id === updatedPokemon.id);
+
+    if (index !== -1) {
+      this.myPokemons[index] = updatedPokemon;
+    } else {
+      console.error('Pokemon not found for update:', updatedPokemon);
+    }
+  }
+
+  editPokemon(pokemon: MyPokemon): void {
+    this.router.navigate(['/edit-pokemon', pokemon.id]);
+  }
 }
 
 export interface MyPokemon {

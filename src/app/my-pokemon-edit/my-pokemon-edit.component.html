@@ -1,1 +1,30 @@
-<p>my-pokemon-edit works!</p>
+<div class="mt-4">
+  <h3 class="text-xl font-bold mb-2 text-neutral-800 dark:text-neutral-50">Modifier le pokemon</h3>
+  <form>
+    <div class="mb-4">
+      <label for="newPokemonName" class="block text-sm font-medium text-neutral-800 dark:text-neutral-50">Nom :</label>
+      <input type="text" id="newPokemonName" name="newPokemonName" [(ngModel)]="newPokemonName"
+             class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-300" required>
+    </div>
+    <div class="mb-4">
+      <label for="newPokemonImage">Image :</label>
+      <input type="file" id="newPokemonImage" (change)="onImageChange($event)" accept="image/*" />
+      <img *ngIf="newPokemonImage" [src]="getImagePreview()" alt="Selected Image" />
+    </div>
+    <div>
+      <label for="newPokemonTypes">Type :</label>
+      <select id="newPokemonTypes" name="newPokemonTypes" [(ngModel)]="newPokemonTypes" multiple required>
+        <option *ngFor="let type of pokemonTypes" [ngValue]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="newPokemonWeight">Poids (en kg) :</label>
+      <input type="number" id="newPokemonWeight" name="newPokemonWeight" [(ngModel)]="newPokemonWeight" />
+    </div>
+    <div>
+      <label for="newPokemonHeight">Taille (en cm) :</label>
+      <input type="number" id="newPokemonHeight" name="newPokemonHeight" [(ngModel)]="newPokemonHeight" />
+    </div>
+    <button type="button" (click)="updatePokemon()" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">Confirmer</button>
+  </form>
+</div>

@@ -12,7 +12,6 @@ import {User} from "../service/users.service";
 export class MyPokemonListComponent implements OnInit {
   constructor(
     private pokemonService: PokemonsService,
-    private authService: AuthService,
     private myPokemonService: MyPokemonService) {}
   pokemons: MyPokemon[] = []
   pokemonTypes: PokemonTypes[] = this.pokemonService.pokemonTypes
