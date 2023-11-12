@@ -9,6 +9,8 @@
   "ADMIN": "Admin",
   "DELETE": "Delete",
   "ADD": "Add",
+  "CONFIRM_DELETE_OWN_ACCOUNT": "If you delete your own account, you will be logged out!",
+  "CONFIRM_DELETE_USER": "Are you sure you want to delete this user?",
 
   "CONNECTION": "Sign in",
   "LOGIN": "Login",

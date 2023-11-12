@@ -9,6 +9,8 @@
     "ADMIN": "Administrateur",
     "DELETE": "Supprimer",
     "ADD": "Ajouter",
+    "CONFIRM_DELETE_OWN_ACCOUNT": "Si tu supprimes ton propre compte, tu seras déconnecté !",
+    "CONFIRM_DELETE_USER": "Es-tu sûr de vouloir supprimer cet utilisateur ?",
 
     "CONNECTION": "Connexion",
     "LOGIN": "Identifiant",

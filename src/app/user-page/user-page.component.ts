@@ -35,23 +35,23 @@ export class UserPageComponent implements OnInit {
 
     if (this.currentUser?.id === user.id) {
       console.log(currentLang)
-      const confirmationMessage = currentLang === 'fr'
-          ? 'Si tu supprimes ton propre compte, tu seras déconnecté !'
-          : 'If you delete your own account, you will be logged out!'
+      const confirmationMessageKey = 'CONFIRM_DELETE_OWN_ACCOUNT'
 
-      if (confirm(confirmationMessage)) {
-        this.userService.deleteUser(user.id)
-        this.authService.logout()
-      }
+      this.translateService.get(confirmationMessageKey).subscribe((confirmationMessage) => {
+        if (confirm(confirmationMessage)) {
+          this.userService.deleteUser(user.id)
+          this.authService.logout()
+        }
+      })
     } else {
-      const confirmationMessage = currentLang === 'fr'
-          ? 'Es-tu sûr de vouloir supprimer cet utilisateur ?'
-          : 'Are you sure you want to delete this user?'
+      const confirmationMessageKey = 'CONFIRM_DELETE_USER'
 
-      if (confirm(confirmationMessage)) {
-        this.userService.deleteUser(user.id)
-        this.loadUsers()
-      }
+      this.translateService.get(confirmationMessageKey).subscribe((confirmationMessage) => {
+        if (confirm(confirmationMessage)) {
+          this.userService.deleteUser(user.id)
+          this.loadUsers();
+        }
+      })
     }
   }
 
