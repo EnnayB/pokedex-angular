@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
-import { User, UserService } from '../service/users.service'
+import { Component, OnInit } from '@angular/core';
+import { User, UserService } from '../service/users.service';
+import {AuthService} from "../service/auth.service";
 
 @Component({
   selector: 'app-user-page',
@@ -8,11 +9,12 @@ import { User, UserService } from '../service/users.service'
 })
 export class UserPageComponent implements OnInit {
   users: User[] = []
+  currentUser: User | undefined
   newUserName: string = ''
   newUserPassword: string = ''
   newUserIsAdmin: boolean = false
 
-  constructor(private userService: UserService) {}
+  constructor(private authService: AuthService, private userService: UserService) {}
 
   ngOnInit(): void {
     this.loadUsers()
@@ -22,13 +24,22 @@ export class UserPageComponent implements OnInit {
     this.users = this.userService.getUsers()
   }
 
-  deleteUser(userId: number): void {
-    this.userService.deleteUser(userId)
-    this.loadUsers()
+  deleteUser(user: User): void { // fixme : how to translate the confirm message ?
+    this.currentUser = this.authService.getCurrentUser()
+    if (this.currentUser?.id === user.id) {
+      if (confirm('Si tu supprimes ton propre compte, tu seras déconnecté !')) {
+        this.userService.deleteUser(user.id)
+        this.authService.logout()
+      }
+    } else {
+      if (confirm('Es-tu sûr de vouloir supprimer cet utilisateur ?')) {
+        this.userService.deleteUser(user.id)
+        this.loadUsers()
+      }
+    }
   }
 
   addUser(): void {
-    console.log(this.newUserName, this.newUserPassword, this.newUserIsAdmin)
     const newUser: User = {
       id: this.users.length + 1,
       login: this.newUserName,
@@ -37,7 +48,6 @@ export class UserPageComponent implements OnInit {
     };
 
     this.userService.addUser(newUser)
-    console.log(this.userService.getUsers())
     this.clearNewUserForm()
     this.loadUsers()
   }

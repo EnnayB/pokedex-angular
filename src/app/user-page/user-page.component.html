@@ -4,7 +4,7 @@
     <ul class="list-none">
         <li *ngFor="let user of users" class="flex justify-between items-center p-4 mb-4 bg-white dark:bg-neutral-800 rounded-md shadow-sm">
             <span class="text-lg font-medium text-neutral-800 dark:text-neutral-50">{{ user.login }}</span>
-            <button (click)="deleteUser(user.id)" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300">Supprimer</button>
+            <button (click)="deleteUser(user)" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300">Supprimer</button>
         </li>
     </ul>
 
