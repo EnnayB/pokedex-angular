@@ -29,16 +29,16 @@
             flex flex-col items-center
             md:static md:z-10 md:w-fit md:transform-none md:border-none md:flex-row">
             <li class="py-4 md:py-0 md:mr-6">
-                <a (click)="navigateToPokedex()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Listes</a>
+                <a (click)="navigateToPokedex()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">{{ 'LIST' | translate }}</a>
             </li>
             <li class="py-4 md:py-0 md:mr-6">
-                <a (click)="navigateToFavorites()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Favoris</a>
+                <a (click)="navigateToFavorites()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">{{ 'FAVORITES' | translate }}</a>
             </li>
             <li class="py-4 md:py-0 md:mr-6">
-                <a (click)="navigateToUsersList()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">Utilisateurs</a>
+                <a (click)="navigateToUsersList()" class="text-sm uppercase font-semibold w-full hover:text-red-400 transition-all">{{ 'USERS' | translate }}</a>
             </li>
             <li class="py-4 md:py-0 md:mr-6 log-out-btn">
-                <a (click)="logout()" class="text-sm uppercase font-semibold text-red-600 hover:text-red-400 transition-all focus:outline-none">Se Déconnecter</a>
+                <a (click)="logout()" class="text-sm uppercase font-semibold text-red-600 hover:text-red-400 transition-all focus:outline-none">{{ 'DISCONNECT' | translate }}</a>
             </li>
             <li class="py-4 md:py-0 md:mr-6">
                 <button (click)="switchLanguage('fr')" class="focus:outline-none">

@@ -6,6 +6,7 @@ import { PokemonListPageComponent } from './pokemon-list-page.component';
 import { PokemonListPageRoutingModule } from './pokemon-list-page-routing.module';
 import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @NgModule({
@@ -17,10 +18,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
   exports: [
     HeaderComponent
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    PokemonListPageRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        SharedModule,
+        PokemonListPageRoutingModule,
+        TranslateModule
+    ]
 })
 export class PokemonListPageModule { }

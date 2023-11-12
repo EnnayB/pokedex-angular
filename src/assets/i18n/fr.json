@@ -1,4 +1,9 @@
 {
+    "LIST": "Liste",
+    "FAVORITES": "Favoris",
+    "USERS": "Utilisateurs",
+    "DISCONNECT": "Se Déconnecter",
+
     "USER_LIST_TITLE": "Liste d'utilisateurs",
     "DELETE": "Supprimer"
 }

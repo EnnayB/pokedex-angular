@@ -1,4 +1,9 @@
 {
+  "LIST": "List",
+  "FAVORITES": "Favorites",
+  "USERS": "Users",
+  "DISCONNECT": "Disconnect",
+
   "USER_LIST_TITLE": "User List",
   "DELETE": "Delete"
 }
