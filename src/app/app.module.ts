@@ -13,6 +13,8 @@ import {SharedModule} from "./shared/shared.module";
 import { FavoritePokemonListComponent } from './favorite-pokemon-list/favorite-pokemon-list.component';
 import {AuthGuard} from "./service/auth.guard";
 import {PokemonListPageModule} from "./pokemon-list/pokemon-list-page/pokemon-list-page.module";
+import { UserPageComponent } from './user-page/user-page.component';
+import { UserPageErrorComponent } from './user-page-error/user-page-error.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -23,7 +25,9 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     LoginPageComponent,
     PokemonDetailComponent,
-    FavoritePokemonListComponent
+    FavoritePokemonListComponent,
+    UserPageComponent,
+    UserPageErrorComponent
   ],
   imports: [
     BrowserModule,
