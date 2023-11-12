@@ -12,6 +12,17 @@ export class UserService {
   getUsers(): User[] {
     return this.users
   }
+
+  addUser(newUser: User): void {
+    this.users.push(newUser)
+  }
+
+  deleteUser(userId: number): void {
+    const index = this.users.findIndex((user) => user.id === userId)
+    if (index !== -1) {
+      this.users.splice(index, 1)
+    }
+  }
 }
 
 export interface User {
