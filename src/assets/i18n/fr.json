@@ -1,5 +1,4 @@
 {
-    "pokedex": {
-        "hello": "hello {{value}}"
-    }
+    "USER_LIST_TITLE": "Liste d'utilisateurs",
+    "DELETE": "Supprimer"
 }
